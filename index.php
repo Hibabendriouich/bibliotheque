@@ -1,7 +1,7 @@
 <?php
 require_once "controllers/LivreController.php";
 
-$controller = new LivreController($db);
+$controller = new LivreController();
 $action = $_GET["action"] ?? "showForm";
 
 switch ($action) {
@@ -9,7 +9,7 @@ switch ($action) {
         $controller->addLivre();
         break;
     default:
-        require "Views/addlivre.php";
+        require "Views/Livre/AddLivre.php";
         break;
 }
 ?>

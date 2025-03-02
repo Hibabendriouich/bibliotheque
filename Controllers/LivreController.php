@@ -1,12 +1,12 @@
 <?php
 require_once "config/database.php";
-require_once " Models/Livre.php";
+require_once "Models/Livre.php";
 
 class LivreController {
 private $livre;
 
-public function __construct($db) {
-$this->livre = new Livres($db);
+public function __construct() {
+$this->livre = new Livre();
 }
 
 public function showAddLivreForm() {

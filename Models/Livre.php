@@ -3,17 +3,17 @@ require_once "config/database.php";
 
 class Livre {
     private $conn;
-    private $table = "livres";
+    private $table = "livre";
 
     public function __construct() {
         $database = new Database();
         $this->conn = $database->getConnection();
     }
 
-    public function addLivre($isbm, $titre, $auteur, $status) {
-        $query = "INSERT INTO " . $this->table . " (isbm, titre, auteur, status) VALUES (:isbm, :titre, :auteur, :status)";
+    public function addLivre($isbn, $titre, $auteur, $status) {
+        $query = "INSERT INTO " . $this->table . " (isbn, titre, auteur, status) VALUES (:isbn, :titre, :auteur, :status)";
         $stmt = $this->conn->prepare($query);
-        $stmt->bindParam(":isbm", $isbm);
+        $stmt->bindParam(":isbn", $isbn);
         $stmt->bindParam(":titre", $titre);
         $stmt->bindParam(":auteur", $auteur);
         $stmt->bindParam(":status", $status);

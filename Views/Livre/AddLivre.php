@@ -7,9 +7,9 @@
 </head>
 <body>
     <h2>Ajouter un Livre</h2>
-    <form method="POST" action="http://localhost/MVP/index.php?action=addLivre">
+    <form method="POST" action="index.php?action=addLivre">
         <label for="isbm">ISBN :</label>
-        <input type="text" id="isbm" name="isbm" required>
+        <input type="text" id="isbm" name="isbn" required>
 
         <label for="titre">Titre :</label>
         <input type="text" id="titre" name="titre" required>
